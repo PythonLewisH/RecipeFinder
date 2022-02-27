@@ -29,8 +29,10 @@ def homepage():
         recipe_list = response.json()
         no_of_recipes = len(recipe_list["results"])
         recipe_names = []
+        full_recipe_ingredients = []
 
         for i in range(no_of_recipes):
+            recipe_ingredients = []
             recipe_name = recipe_list["results"][i]["name"]
             recipe_names.append(recipe_name)
             recipe_id = recipe_list["results"][i]["id"]
@@ -43,14 +45,17 @@ def homepage():
             no_of_ingredients = len(recipe_detail["sections"][0]["components"])
             for y in range(no_of_ingredients):
                 ingredients = recipe_detail["sections"][0]["components"][y]["raw_text"]
+                recipe_ingredients.append(ingredients)
                 print(ingredients)
             print("INSTRUCTIONS: ")
             no_of_instructions = len(recipe_detail["instructions"])
             for n in range(no_of_instructions):
                 instruction = recipe_detail["instructions"][n]["display_text"]
                 print(f"{n + 1}:" + instruction)
+            full_recipe_ingredients.append(recipe_ingredients)
 
-        return render_template("index.html", recipe_names=recipe_names, no_of_recipes=no_of_recipes)
+        return render_template("index.html", recipe_names=recipe_names, full_recipe_ingredients=full_recipe_ingredients,
+                               no_of_recipes=no_of_recipes)
 
 
 if __name__ == "__main__":
