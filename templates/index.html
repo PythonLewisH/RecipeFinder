@@ -74,14 +74,14 @@
 
         <button class="accordion">{{ recipe_names[i] }}</button>
         <div class="panel">
-          <p>
 
+          <p>
             {% for ingredients in full_recipe_ingredients[i] %}
             {{ ingredients }}
             <br>
             {% endfor %}
-
           </p>
+
         </div>
 
         {% endfor %}
