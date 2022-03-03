@@ -30,9 +30,11 @@ def homepage():
         no_of_recipes = len(recipe_list["results"])
         recipe_names = []
         full_recipe_ingredients = []
+        full_recipe_instructions = []
 
         for i in range(no_of_recipes):
             recipe_ingredients = []
+            recipe_instructions = []
             recipe_name = recipe_list["results"][i]["name"]
             recipe_names.append(recipe_name)
             recipe_id = recipe_list["results"][i]["id"]
@@ -51,11 +53,13 @@ def homepage():
             no_of_instructions = len(recipe_detail["instructions"])
             for n in range(no_of_instructions):
                 instruction = recipe_detail["instructions"][n]["display_text"]
+                recipe_instructions.append(instruction)
                 print(f"{n + 1}:" + instruction)
             full_recipe_ingredients.append(recipe_ingredients)
+            full_recipe_instructions.append(recipe_instructions)
 
         return render_template("index.html", recipe_names=recipe_names, full_recipe_ingredients=full_recipe_ingredients,
-                               no_of_recipes=no_of_recipes)
+                               no_of_recipes=no_of_recipes, full_recipe_instructions=full_recipe_instructions)
 
 
 if __name__ == "__main__":

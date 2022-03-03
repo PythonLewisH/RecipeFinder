@@ -66,7 +66,7 @@
 
        {% if recipe_names %}
 
-    <section class="search-results">
+        <section class="search-results">
 
       <div class="results container-fluid">
 
@@ -75,6 +75,7 @@
         <button class="accordion">{{ recipe_names[i] }}</button>
         <div class="panel">
 
+        <div class="ingredient-list">
           <p>
             {% for ingredients in full_recipe_ingredients[i] %}
             {{ ingredients }}
@@ -82,12 +83,19 @@
             {% endfor %}
           </p>
 
+          </div>
+          <div class="recipe-instructions">
+          <p>
+            {% for instruction in full_recipe_instructions[i] %}
+            {{ instruction }}
+            <br>
+            {% endfor %}
+          </p>
         </div>
 
-        {% endfor %}
-
-
       </div>
+
+        {% endfor %}
 
     </section>
 
