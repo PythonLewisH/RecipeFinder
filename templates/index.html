@@ -21,7 +21,7 @@
 
   <section class="top-section">
 
-    <div class="container-fluid">
+    <div class="container-fluid nav-banner">
 
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
@@ -29,25 +29,48 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#">How it works</a>
+                <a class="nav-link" href="#how">How it works</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Find a recipe</a>
+                <a class="nav-link" href="#search">Find a recipe</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <div class="call-to-action">
-        <button onclick="window.location.href='#search-section'"class="button-33" role="button">Find a recipe</button>
+      </div>
+      </section>
 
-  </section>
 
-  <section id="search-section">
+      <div id="how" class="how-it-works container-fluid">
+
+          <div class="point-1">
+          <div class="point-circle">1</div>
+          <div class="point-text"> Choose your ingredients.</div>
+          </div>
+          <br />
+
+          <div class="point-2">
+          <div class="point-circle">2</div>
+          <div class="point-text">  Recieve 5 Random recipes.</div>
+          </div>
+          <br />
+
+
+          <div class="point-3">
+          <div class="point-circle">3</div>
+          <div class="point-text"> Click on the recipe you like.</div>
+          </div>
+      </div>
+
+
+
+  <section id="search">
 
     <div class="container-fluid search">
 
@@ -85,7 +108,6 @@
             {% endfor %}
           </p>
 
-          </div>
           <div class="recipe-instructions">
           <p>
             {% for instruction in full_recipe_instructions[i] %}
@@ -97,6 +119,7 @@
         </div>
 
       </div>
+    </div>
 
         {% endfor %}
 
