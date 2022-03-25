@@ -94,7 +94,6 @@ margin-top:50px;
 
 .results {
 background-color: #FFE61B;
-height:500px;
 }
 
 
@@ -139,6 +138,7 @@ height:500px;
 .recipe-image {
   width: 300px;
   height: 300px;
+  border-radius: 50%;
   object-fit: cover;
 }
 

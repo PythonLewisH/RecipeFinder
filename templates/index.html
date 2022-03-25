@@ -95,8 +95,12 @@
 
         {% for i in range(no_of_recipes) %}
 
-        <button class="accordion">{{ recipe_names[i] }}</button>
+          <button class="accordion">{{ recipe_names[i] }}</button>
+
+
         <div class="panel">
+
+
 
         <div class="ingredient-list">
           <p>
@@ -107,6 +111,7 @@
             <br>
             {% endfor %}
           </p>
+        </div>
 
           <div class="recipe-instructions">
           <p>
@@ -119,10 +124,10 @@
         </div>
 
       </div>
-    </div>
+
 
         {% endfor %}
-
+        </div>
     </section>
 
     {% endif %}
